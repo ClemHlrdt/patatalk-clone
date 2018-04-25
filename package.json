@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ClemHlrdt/patatalk-clone#readme",
   "dependencies": {
+    "howler": "^2.0.9",
     "paper": "^0.11.5"
   }
 }
