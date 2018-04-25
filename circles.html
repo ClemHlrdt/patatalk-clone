@@ -6,12 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Circles</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="circles.css">
+    <script src="./node_modules/paper/dist/paper-full.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+        for(var x = 0; x<1000; x+=100){ 
+            for(var y = 0; y<1000; y+=100){
+            var circle = new Path.Circle(new Point(x,y), 10); 
+            circle.fillColor="purple" 
+            }
+        } 
+    </script>
 </head>
 
 <body>
-
+    <canvas id="myCanvas" resize></canvas>
 </body>
 
 </html>
