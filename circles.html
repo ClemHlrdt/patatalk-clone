@@ -9,12 +9,22 @@
     <link rel="stylesheet" href="circles.css">
     <script src="./node_modules/paper/dist/paper-full.js"></script>
     <script type="text/paperscript" canvas="myCanvas">
-        for(var x = 0; x<1000; x+=100){ 
-            for(var y = 0; y<1000; y+=100){
-            var circle = new Path.Circle(new Point(x,y), 10); 
-            circle.fillColor="purple" 
-            }
-        } 
+
+        function onKeyDown(event) {
+            var maxPoint = new Point(view.size.width, view.size.height);
+            var randomPoint = Point.random();
+            var point = maxPoint * randomPoint;
+            new Path.Circle(point, 10).fillColor = "orange"; 
+            
+        }
+        var animatedCircle = new Path.Circle(new Point (300,300), 100);
+        animatedCircle.fillColor = 'red';
+
+        function onFrame(event){
+            animatedCircle.fillColor.hue += 1;
+            animatedCircle.scale(.99);
+        }
+
     </script>
 </head>
 
